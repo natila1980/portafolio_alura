@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+    --color-primario: #000000;
+    --color-secundario: #f6f6f6;
+    --color-terciario: #22d4fd;
+    --color-hover: #272727;
+
+    --fuente-montserrat: 'Montserrat', sans-serif;
+    --fuente-krona: 'Krona One', sans-serif;
+}
+
+* {
+    padding:0;
+    margin:0;
+}
+
+body{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 2% 0% 0% 15%; /* 2% arriba, 0% derecha, 0% abajo, 15% izquierda */
+}
+
+.header__menu{
+    display: flex; /* para que los elementos se alineen en línea */
+    gap: 80px;
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.presentacion{
+    display: flex;
+    align-items: center;
+    padding: 1% 15%;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    gap: 35px; 
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);     
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo{
+    font-size: 1.5rem;
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 21.5px 0;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);
+    display: flex; /* para que el contenido se centre verticalmente */
+    justify-content: center; /* para que el contenido se centre horizontalmente */
+    gap: 16px; /* para que haya un espacio entre el icono y el texto */
+}   
+
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover)
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 30px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media(max-width:1200px){ /*comportamiento que queremos que tenga en el mobile*/
+    .header{
+        padding: 10%; 
+    }
+    
+    .header__menu{ /*ya tiene display:flex, por eso no lo repetimos*/
+        justify-content: center;
+    }
+    
+    .presentacion{
+        flex-direction: column-reverse; /*por defecto es row, pero en mobile queremos que sea column y esté arriba*/
+        padding: 5%;
+    }
+
+    .presentacion__contenido{
+        width: auto; /*para que se adapte automáticamente al tamaño del contenido, pero sin forzarlo a que ocupe el 100% de la pantalla (que es lo que hace width:100$*/ 
+    }   
+}
